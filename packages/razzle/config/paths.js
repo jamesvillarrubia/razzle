@@ -43,11 +43,11 @@ const nodePaths = (process.env.NODE_PATH || '')
 module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
-  appBuild: resolveApp('build'),
-  appBuildPublic: resolveApp('build/public'),
+  appBuild: resolveApp(process.env.APP_BUILD || 'build'),
+  appBuildPublic: resolveApp(process.env.APP_BUILD_PUBLIC || 'build/public'),
   appAssetsManifest: resolveApp('build/assets.json'),
   appChunksManifest: resolveApp('build/chunks.json'),
-  appPublic: resolveApp('public'),
+  appPublic: resolveApp(process.env.APP_PUBLIC || 'public'),
   appNodeModules: resolveApp('node_modules'),
   appSrc: resolveApp('src'),
   appHtml: resolveApp('public/index.html'), // client only
